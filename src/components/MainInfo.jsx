@@ -28,7 +28,7 @@ export const AboutInfo = () => (
   </div>
 );
 
-export const ExpirienceInfo = () => (
+export const ExperienceInfo = () => (
   <div className="in expirience">
     <h3>Frontend developer at Nethunt CRM</h3>
     <p>

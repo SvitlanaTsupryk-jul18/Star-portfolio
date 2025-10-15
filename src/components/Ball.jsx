@@ -20,6 +20,7 @@ export function Ball({ isActive, color, ...props }) {
       easing.damp(ref.current.material, "metalness", 0, 0.1, delta);
     }
   });
+  useCursor(isHovered);
 
   const config = useControls("balls", {
     ballsColor: "green",
@@ -64,11 +65,8 @@ export function Ball({ isActive, color, ...props }) {
         reflectivity={config.reflectivity}
         clearcoat={config.clearcoat}
         clearcoatRoughness={config.clearcoatRoughness}
-        // emissive={[0,2,0]}
-        // emissiveIntensity={isHovered ? 1.1 : 0}
-        // color={[2,0,0]}
-        // toneMapped={false}
-        // deepTest={false}
+        // emissive={[0.3,0.8,1.8]}
+        // emissiveIntensity={isHovered ? 2 : 0}
       />
 
       {isActive && (
@@ -81,7 +79,6 @@ export function Ball({ isActive, color, ...props }) {
           speed={config.sparclesSpeed}
         />
       )}
-
     </mesh>
   );
 }

@@ -12,9 +12,6 @@ import { HDRLoader } from 'three/addons/loaders/HDRLoader.js';
 export function Diamond(props) {
   const { nodes } = useGLTF("./dflat.glb");
   const texture = useLoader(HDRLoader, "./diamond_1k.hdr");
-
-    // const texture = useTexture("./bg7.jpg");
-
   const config = useControls("Diamond", {
     bounces: { value: 3, min: 0, max: 8, step: 1 },
     aberrationStrength: { value: 0.01, min: 0, max: 0.1, step: 0.01 },

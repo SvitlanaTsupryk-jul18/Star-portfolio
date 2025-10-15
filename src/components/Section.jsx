@@ -5,7 +5,7 @@ const inter = import("@pmndrs/assets/fonts/inter_bold.woff");
 import { Ball } from "./Ball";
 import {
   AboutInfo,
-  ExpirienceInfo,
+  ExperienceInfo,
   ProjectsInfo,
   ContactsInfo,
   SkillsInfo,
@@ -72,8 +72,8 @@ export const sections = [
     color: "#026048",
   },
   {
-    name: ExpirienceInfo,
-    title: "Expirience",
+    name: ExperienceInfo,
+    title: "Experience",
     start: -Math.PI / 5,
     len: Math.PI / 5,
     color: "#3a0ca3",
