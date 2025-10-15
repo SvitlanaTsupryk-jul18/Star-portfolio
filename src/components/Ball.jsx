@@ -15,7 +15,7 @@ export function Ball({ isActive, color, ...props }) {
 
   useFrame((state, delta) => {
     if (isHovered) {
-      easing.damp(ref.current.material, "metalness", 0.5, 0.1, delta);
+      easing.damp(ref.current.material, "metalness", 0.6, 0.1, delta);
     } else {
       easing.damp(ref.current.material, "metalness", 0, 0.1, delta);
     }

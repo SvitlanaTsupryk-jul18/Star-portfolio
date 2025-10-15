@@ -11,6 +11,7 @@ import { BsPhoneFill, BsBootstrap } from "react-icons/bs";
 import { SiMinutemailer, SiGhost, SiJira, SiThreedotjs } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiJavascriptLine } from "react-icons/ri";
+import { MdEmail } from 'react-icons/md';
 
 export const AboutInfo = () => (
   <div className="in">
@@ -50,7 +51,7 @@ export const ProjectsInfo = () => (
     <p>
       <a
         target="_blank"
-        href="https://www.linkedin.com/in/svitlana-tsupryk-b65623a8/"
+        href="https://nethunt.com/"
         className="link"
       >
         <svg
@@ -146,12 +147,16 @@ export const ContactsInfo = () => (
       Add me
     </a>
     <a target="_blank" href="mailto:stsupryk@gmail.com" className="link">
-      <SiMinutemailer style={{ fill: "white" }} />
+      <MdEmail style={{ fill: "white" }} />
       Write to me
     </a>
     <a target="_blank" href="tel:+380683542570" className="link">
       <BsPhoneFill style={{ fill: "white" }} />
       Call me
+    </a>
+    <a target="_blank" href="https://t.me/svitlana_88888" className="link">
+      <SiMinutemailer style={{ fill: "white" }} />
+      Send a message
     </a>
     <a
       target="_blank"
