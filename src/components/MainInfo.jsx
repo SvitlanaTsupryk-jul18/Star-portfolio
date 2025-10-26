@@ -113,13 +113,13 @@ export const ProjectsInfo = () => (
     <p>
       <a
         target="_blank"
-        href="https://svitlanatsupryk-jul18.github.io/react-contact-form/contact"
+        href="https://svitlanatsupryk-jul18.github.io/react-typescript-form/contact"
         className="link"
       >
         <FaReact />
         Contact form &#10230;
       </a>
-      <span>React, React Router with validation</span>
+      <span>React, React Router, TypeScript</span>
     </p>
     <p>
       <a
