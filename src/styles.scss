@@ -13,13 +13,15 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  overscroll-behavior-y: none;
+  height: 100dvh;
 }
 
 body {
   font-family: "Inter";
   background: #fdfdfd;
 }
-
+canvas{    width: 100%;}
 a {
   pointer-events: all;
   color: black;
@@ -47,6 +49,15 @@ canvas {
   opacity: 0;
   touch-action: none;
   animation: fade-in 5s ease 1s forwards;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y !important;
 }
 
 .billboard {
@@ -258,9 +269,9 @@ div.spinner {
     $size: $inner + ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 1, 0.12 * 1, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #2172b8;
     border-top-left-radius: $inner + $border;
     border-top-right-radius: $inner + $border;
@@ -270,9 +281,9 @@ div.spinner {
     $size: $inner + 2 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 2, 0.12 * 2, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #18a39b;
     border-top-left-radius: $inner + 2 * $border;
     border-top-right-radius: $inner + 2 * $border;
@@ -282,9 +293,9 @@ div.spinner {
     $size: $inner + 3 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 3, 0.12 * 3, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #82c545;
     border-top-left-radius: $inner + 3 * $border;
     border-top-right-radius: $inner + 3 * $border;
@@ -294,9 +305,9 @@ div.spinner {
     $size: $inner + 4 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 4, 0.12 * 4, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #f8b739;
     border-top-left-radius: $inner + 4 * $border;
     border-top-right-radius: $inner + 4 * $border;
@@ -306,9 +317,9 @@ div.spinner {
     $size: $inner + 5 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 5, 0.12 * 5, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #f06045;
     border-top-left-radius: $inner + 5 * $border;
     border-top-right-radius: $inner + 5 * $border;
@@ -318,9 +329,9 @@ div.spinner {
     $size: $inner + 6 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 6, 0.12 * 6, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #ed2861;
     border-top-left-radius: $inner + 6 * $border;
     border-top-right-radius: $inner + 6 * $border;
@@ -330,9 +341,9 @@ div.spinner {
     $size: $inner + 7 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 7, 0.12 * 7, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #c12680;
     border-top-left-radius: $inner + 7 * $border;
     border-top-right-radius: $inner + 7 * $border;
@@ -342,9 +353,9 @@ div.spinner {
     $size: $inner + 8 * ($border + $spacing) * 2;
     animation-timing-function: cubic-bezier(0.09, 0.3 * 8, 0.12 * 8, 0.03);
     width: $size;
-    height:calc($size / 2);
+    height: calc($size / 2);
     margin-top: calc(-1 * $size / 2);
-    margin-left:calc(-1 * $size / 2);
+    margin-left: calc(-1 * $size / 2);
     border-color: #5d3191;
     border-top-left-radius: $inner + 8 * $border;
     border-top-right-radius: $inner + 8 * $border;

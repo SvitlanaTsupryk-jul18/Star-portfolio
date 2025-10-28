@@ -10,6 +10,7 @@ import {
   ContactsInfo,
   SkillsInfo,
 } from "./MainInfo";
+import { useThree } from "@react-three/fiber";
 
 export function Section({
   i,
@@ -23,6 +24,8 @@ export function Section({
   color,
   ...props
 }) {
+  const { size } = useThree();
+  const scaleFactor = size.width < 768 ? 0.65 : 1;
   const amount = Math.round(len * 5);
   const textPosition = from + (amount / 2 / amount) * len;
   const angle = from + len / amount;
@@ -36,16 +39,16 @@ export function Section({
     <group {...props}>
       <Billboard
         position={[
-          Math.sin(textPosition) * radius * 1.3,
-          0.5,
-          Math.cos(textPosition) * radius * 1.3,
+          Math.sin(textPosition) * radius * 1.3 * scaleFactor,
+          0.5 * scaleFactor * scaleFactor,
+          Math.cos(textPosition) * radius * 1.3 * scaleFactor,
         ]}
       >
         <Text
           font={suspend(inter).default}
           fontSize={0.25}
           anchorX="center"
-          color="#06d6a0"
+          color="white"
           fontWeight={800}
         >
           {category}
@@ -54,7 +57,11 @@ export function Section({
       <Ball
         key={angle}
         onClick={(e) => handleClick(e)}
-        position={[Math.sin(angle) * radius, 0, Math.cos(angle) * radius]}
+        position={[
+          Math.sin(angle) * radius * scaleFactor,
+          0 - 1 / scaleFactor,
+          Math.cos(angle) * radius * scaleFactor,
+        ]}
         rotation={[0, Math.PI / 2 + angle, 0]}
         isActive={active === i}
         color={color}
@@ -68,7 +75,7 @@ export const sections = [
     name: AboutInfo,
     title: "About",
     start: Math.PI / 5,
-    len: (Math.PI / 5) * 2,
+    len: Math.PI / 5,
     color: "#026048",
   },
   {
@@ -82,14 +89,14 @@ export const sections = [
     name: ProjectsInfo,
     title: "Projects",
     start: (Math.PI * 3) / 5,
-    len: (Math.PI / 5) * 2,
+    len: Math.PI / 5,
     color: "#ffff00",
   },
   {
     name: ContactsInfo,
     title: "Contacts",
     start: Math.PI,
-    len: (Math.PI / 5) * 2,
+    len: Math.PI / 5,
     color: "#e76f51",
   },
   {
@@ -98,5 +105,5 @@ export const sections = [
     start: (Math.PI * 7) / 5,
     len: Math.PI * 2 - (Math.PI * 9) / 5,
     color: "#ef476f",
-  }
+  },
 ];

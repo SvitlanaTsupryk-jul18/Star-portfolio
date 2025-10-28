@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { extend, useFrame } from "@react-three/fiber";
+import { extend, useFrame, useThree } from "@react-three/fiber";
 import { useScroll, Center, Text3D } from "@react-three/drei";
 import { easing, geometry } from "maath";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -36,6 +36,8 @@ export function Scene({ children, ...props }) {
   };
 
   const [textOpacity, setTextOpacity] = useState(0);
+  const { size } = useThree();
+  const scaleFactor = size.width < 768 ? 0.75 : 1;
 
   useEffect(() => {
     if (active === null) {
@@ -75,8 +77,9 @@ export function Scene({ children, ...props }) {
           letterSpacing={-0.06}
           size={0.6}
           font="./Inter_Bold.json"
+          scale={[scaleFactor,scaleFactor,scaleFactor]}
         >
-          {active === null && `         Svitlana\nFrontend developer`}
+          {active === null && `               Svitlana\nFrontend developer`}
           <meshNormalMaterial transparent opacity={textOpacity} />
         </Text3D>
       </Center>

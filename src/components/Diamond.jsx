@@ -6,8 +6,8 @@ import {
   MeshRefractionMaterial,
 } from "@react-three/drei";
 import { useControls } from "leva";
-import { useLoader } from "@react-three/fiber";
-import { HDRLoader } from 'three/addons/loaders/HDRLoader.js';
+import { useLoader, useThree } from "@react-three/fiber";
+import { HDRLoader } from "three/addons/loaders/HDRLoader.js";
 
 export function Diamond(props) {
   const { nodes } = useGLTF("./dflat.glb");
@@ -17,9 +17,12 @@ export function Diamond(props) {
     aberrationStrength: { value: 0.01, min: 0, max: 0.1, step: 0.01 },
     ior: { value: 2.75, min: 0, max: 10 },
     fresnel: { value: 1, min: 0, max: 1 },
-    intensity: { value: .1, min: 0, max: 1, step: .01 },
+    intensity: { value: 0.1, min: 0, max: 1, step: 0.01 },
     color: "white",
   });
+
+  const { size } = useThree();
+  const scaleFactor = size.width < 768 ? 3 : 1;
 
   return (
     <CubeCamera resolution={256} frames={1} envMap={texture}>
@@ -27,7 +30,7 @@ export function Diamond(props) {
         <Caustics
           backfaces
           color={config.color}
-          position={[0, -0.5, 0]}
+          position={[0, -0.5 * scaleFactor, 0]}
           lightSource={[2.5, 2.5, -5]}
           worldRadius={0.1}
           ior={1.8}
